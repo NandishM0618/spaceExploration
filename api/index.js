@@ -18,7 +18,13 @@ app.use(fileUpload());
 dotenv.config();
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 mongoose
   .connect(process.env.MONGODB_URL, {
