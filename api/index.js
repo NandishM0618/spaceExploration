@@ -37,6 +37,9 @@ mongoose
   .then(console.log("connected to mongo db"))
   .catch((err) => console.log(err));
 
+app.use("/", (req, res) => {
+  res.json("Hello");
+});
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
