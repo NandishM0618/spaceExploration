@@ -27,10 +27,13 @@ app.use(
 );
 
 mongoose
-  .connect(process.env.MONGODB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://nandish1729:Fx8fbRgsW6Nvl3GF@cluster0.idnfnxj.mongodb.net/spaceExploration?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(console.log("connected to mongo db"))
   .catch((err) => console.log(err));
 
